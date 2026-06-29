@@ -1,0 +1,64 @@
+ads:
+  url: "https://dev.azure.com/{organization}"
+  organization: ""
+  personal_access_token: ""
+  projects:
+    - name: "Earth"
+      work_item_type: "Bug"
+    - name: "LCM Tracker"
+      work_item_type: "Bug"
+  fields:
+    - "System.Id"
+    - "System.Title"
+    - "System.AreaPath"
+    - "Microsoft.VSTS.Common.Severity"
+    - "System.State"
+    - "Custom.Generic02"
+    - "Custom.Generic03"
+    - "Custom.Generic04"
+    - "Custom.Generic05"
+
+clearquest:
+  url: ""
+  username: ""
+  password: ""
+  database: ""
+  project: "Earth"
+  record_types:
+    - "PD"
+    - "EI"
+  fields:
+    - "id"
+    - "headline"
+    - "component"
+    - "state"
+    - "score"
+    - "probability"
+
+database:
+  path: "pmi_tracking.db"
+
+pmi:
+  severity_weights:
+    "1 - Critical": 4
+    "2 - High": 3
+    "3 - Medium": 2
+    "4 - Low": 1
+  status_closed:
+    - "Resolved"
+    - "Closed"
+    - "Done"
+    - "Verified"
+  phase_targets:
+    SIT:
+      pmi_threshold: 60.0
+      max_open_critical: 5
+      max_open_high: 20
+    UAT:
+      pmi_threshold: 75.0
+      max_open_critical: 2
+      max_open_high: 10
+    Production:
+      pmi_threshold: 90.0
+      max_open_critical: 0
+      max_open_high: 3
