@@ -30,7 +30,7 @@ def connector():
 
 
 class TestADSConnectorInit:
-    def test_base_url_organisation_substituted(self, connector):
+    def test_base_url_organization_substituted(self, connector):
         assert "my-org" in connector.base_url
 
     def test_authorization_header_set(self, connector):
